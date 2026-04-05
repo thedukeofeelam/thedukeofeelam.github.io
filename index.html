@@ -1,73 +1,402 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>The Duke of Feelam | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilanthiraiyan Sivagnanamoorthy | Aerospace Engineer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb4d);
+            background-attachment: fixed;
+            min-height: 100vh;
             padding: 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
         }
+
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
             border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
         }
-        h1 { color: #ffd700; }
-        .project {
+
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fdbb4d;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            background: #ddd;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-info a, .contact-info span {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
             background: rgba(255,255,255,0.2);
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
+            border-radius: 25px;
+            transition: 0.3s;
+            font-size: 0.9rem;
         }
-        a {
-            color: #ffd700;
+
+        .contact-info a:hover {
+            background: #fdbb4d;
+            color: #1a2a6c;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 2rem 3rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #b21f1f;
+            border-bottom: 3px solid #b21f1f;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .project, .experience-item, .education-item, .publication-item, .award-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #fdbb4d;
+        }
+
+        .project h3, .experience-item h3, .education-item h3, .publication-item h3 {
+            color: #1a2a6c;
+            margin-bottom: 0.3rem;
+        }
+
+        .company, .institution, .venue {
+            color: #b21f1f;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item {
+            font-size: 0.95rem;
+        }
+
+        .publication-item a {
+            color: #b21f1f;
             text-decoration: none;
         }
-        .btn {
-            background: #ffd700;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
+
+        .publication-item a:hover {
+            text-decoration: underline;
+        }
+
+        .award-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .award-badge {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: #1a2a6c;
+            text-align: center;
+            padding: 1.5rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            background: #fdbb4d20;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .contact-info span {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>👑 The Duke of Feelam</h1>
-        <p>Developer | Creator | Tech Enthusiast</p>
-        
-        <h2>📁 My GitHub Projects</h2>
-        <div id="repos"></div>
-        
-        <h2>📫 Connect With Me</h2>
-        <p>GitHub: <a href="https://github.com/thedukeofeelam" target="_blank">@thedukeofeelam</a></p>
-        
+        <header>
+            <div class="profile-img">👨‍🚀</div>
+            <h1>Ilanthiraiyan Sivagnanamoorthy</h1>
+            <div class="title">Aerospace Engineering Graduate | IMechE Best Student | Undergraduate Researcher</div>
+            <div class="contact-info">
+                <span>📞 07492 700454</span>
+                <a href="mailto:ilansiva30@gmail.com">📧 ilansiva30@gmail.com</a>
+                <a href="https://github.com/thedukeofeelam" target="_blank">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/in/ilanthiraiyan-sivagnanamoorthy/" target="_blank">🔗 LinkedIn</a>
+                <span>📍 Harrow, HA7 4TT</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>📌 Profile</h2>
+                <div class="highlight">
+                    <p>A keen Aerospace Engineering student with strong grounding in mathematics and computational methods. Recipient of the IMechE Best Student and Drapers' Company Prize. Undergraduate researcher focused on mathematics in engineering education, particularly threshold concepts and skill inventories. Committed to advancing STEM education and promoting diversity through impactful volunteering.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>🎓 Education</h2>
+                <div class="education-item">
+                    <h3>Queen Mary University of London</h3>
+                    <div class="company">MEng (Hons) Aerospace Engineering with Industrial Experience</div>
+                    <div class="date">Predicted: 1st Class Honours | Y1: 79% | Y2: 83% | Y3: 84%</div>
+                    <p><strong>Relevant Modules:</strong> Computational & Mathematical Modelling (92%), Numerical Methods & Data Science (94%), Designing for Sustainable Manufacture (90%), Experimental Design & Practice (82%), Aircraft Propulsion (86%), Spacecraft Design (80%)</p>
+                    <p><strong>Dissertation:</strong> Achieved 87% for research project titled "Nexus: Rendezvous and Resupply Logistics Assessment for a Rotating Space Station Habitat in Low Earth Orbit"</p>
+                </div>
+                <div class="education-item">
+                    <h3>Harrow High School & Sixth Form</h3>
+                    <div class="date">Sep 2015 - Jul 2022</div>
+                    <p>A-Levels: Mathematics (A*), Physics (A*), Computer Science (A*)<br>
+                    GCSEs: 12 Grade 9s, including Mathematics, Further Mathematics and Physics</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>💼 Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Mechanical Engineer</h3>
+                    <div class="company">GE Aerospace, Bristol</div>
+                    <div class="date">Jun 2025 - Present</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Lead end-to-end development of a customer-facing operator training combustor model for the GEnx engine, enabling inspection tool training and demonstration</li>
+                        <li>Design and execute investigations to establish standardised technical parameters, delivering data-driven inputs that improved design margins and tool reliability across multiple engine programs</li>
+                        <li>Operate and maintain workshop equipment, upholding strict safety protocols and housekeeping standards in an R&D environment</li>
+                        <li>Supported on-site inspections of GEnx and GE9X engines at GE Wales and GE Caledonian</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Maths for Engineering Curriculum Developer</h3>
+                    <div class="company">Levelling Up</div>
+                    <div class="date">Dec 2025 - Mar 2026</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Authored a 10,000-word recommendations report on instructional design for partner institutions</li>
+                        <li>Developed pilot-ready materials across five core engineering mathematics modules, embedding authentic engineering contexts for mixed-attainment A-Level cohorts</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Student Ambassador & Academic Mentor</h3>
+                    <div class="company">SEMs</div>
+                    <div class="date">Mar 2025 - Jan 2026</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Mentored 12 A-Level Mathematics students enrolled in the 'Levelling Up: Maths for Engineering' programme, supporting their pursuit of engineering at university</li>
+                        <li>Covered themes beyond standard curricula, including mathematical dialogue, thinking and proof</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Undergraduate Researcher</h3>
+                    <div class="company">QMCUR</div>
+                    <div class="date">Jul 2024 - Present</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Collaborated on a joint, cross-national research project with Cornell University, aimed at designing and piloting a mathematical skills inventory for undergraduate engineering</li>
+                        <li>Published 2 works-in-progress at 2025 IEEE EduCon and the ASEE Annual Conference & Expo, with 6 additional disseminations across symposiums, webinars, forums, and showcases</li>
+                        <li>Led 3 workshops at leading engineering universities, engaging educators from across the UK</li>
+                        <li>Co-authored a handbook chapter for the European Society for Engineering Education</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Society Treasurer</h3>
+                    <div class="company">QMSEDS</div>
+                    <div class="date">Nov 2023 - Jul 2025</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Governed the treasury by overseeing expenses, securing funding and seeking sponsorships</li>
+                        <li>Secured funding of £500 for 2023/24, followed by £3,400 for 2024/25</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Student Contributor</h3>
+                    <div class="company">Spacecraft Dynamics Textbook</div>
+                    <div class="date">Nov 2023 - Sep 2024</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Co-authored an online textbook on Spacecraft Dynamics for future EMS515U module cohorts</li>
+                        <li>Utilised Python, LaTeX, Markup, and HTML in the development process</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Volunteer Tutor</h3>
+                    <div class="company">Tutorfair Foundation</div>
+                    <div class="date">Nov 2022 - May 2024</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Partnered with organisations like The Westminster Foundation to volunteer 50+ hours tutoring GCSE/A-level Maths, Physics, and Computer Science to pupils from underserved backgrounds</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Project Lead</h3>
+                    <div class="company">Optimising Hyperbat's Battery Production</div>
+                    <div class="date">Jan 2024 - Apr 2024</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Led project to optimise busbar production in EV battery packs, addressing failure through material selection and manufacturing routes</li>
+                        <li>Achieved A+ grade with 98% individual contribution score; solution adopted by Queen Mary and integrated into module exam</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Event Presenter</h3>
+                    <div class="company">Tamil Youth Organisation</div>
+                    <div class="date">Nov 2022 - Present</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Scripted and presented Tamil national, cultural and educational events</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>🛠️ Technical Skills</h2>
+                <div class="skills">
+                    <span class="skill-tag">Inventor</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">Creo</span>
+                    <span class="skill-tag">Bambu Studio</span>
+                    <span class="skill-tag">EduPack</span>
+                    <span class="skill-tag">Abaqus</span>
+                    <span class="skill-tag">STAR-CCM+</span>
+                    <span class="skill-tag">GMAT</span>
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">Markup</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Inkscape</span>
+                    <span class="skill-tag">Microsoft Office</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>📄 Publications</h2>
+                <div class="publication-item">
+                    <p>1. <strong>Sivagnanamoorthy, I.</strong>, A. Werth and R. Shah, "Towards a Cross-National Mathematical Skills Inventory for Engineers," <em>ASEE Annual Conference</em>, Montreal, 2025, DOI: 10.18260/1-2-57296.</p>
+                </div>
+                <div class="publication-item">
+                    <p>2. <strong>I. Sivagnanamoorthy</strong>, A. Werth, R. Shah and R. Shah, "Towards an AI-Motivated Mathematical Skills Inventory for Future Engineers," <em>IEEE Global Engineering Education Conference</em>, London, 2025, DOI: 10.1109/EDUCON62633.2025.11016544.</p>
+                </div>
+                <div class="publication-item">
+                    <p>3. M. Al Haimus, Y. Vaghela, <strong>I. Sivagnanamoorthy</strong>, and R. Shah, "Squashing bugs not snakes: co-creating a Python toolkit to develop engineering students' programming proficiency," in <em>EERN Symposium Proceedings</em>, Manchester, 2025, DOI: 10.71535/f5dfe8de-1b80-4192-8573-54d934996dec</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>🏆 Honours & Awards</h2>
+                <div class="award-list">
+                    <span class="award-badge">🏅 IMechE Best Student Certificate (2023)</span>
+                    <span class="award-badge">🏅 Drapers' Company Prize (2025)</span>
+                    <span class="award-badge">🏅 SEED Prize (2025)</span>
+                    <span class="award-badge">🏅 SEMS School Prize for Best Poster (2025)</span>
+                    <span class="award-badge">🏅 Gold Skills Award (2024)</span>
+                    <span class="award-badge">🏅 Bronze Volunteering Award (2023)</span>
+                    <span class="award-badge">🏅 Headteacher's Honours Award (2020)</span>
+                    <span class="award-badge">🏅 Jack Petchey Outstanding Achievement (2016, 2018)</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>🌐 Languages</h2>
+                <div class="skills">
+                    <span class="skill-tag">English (Native)</span>
+                    <span class="skill-tag">Tamil (Native)</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>📫 Let's Connect</h2>
+                <p>I'm always open to discussing research collaborations, engineering opportunities, or STEM education initiatives.</p>
+                <p>Feel free to reach out via <a href="https://www.linkedin.com/in/ilanthiraiyan-sivagnanamoorthy/" target="_blank" style="color:#b21f1f;">LinkedIn</a>, check out my code on <a href="https://github.com/thedukeofeelam" target="_blank" style="color:#b21f1f;">GitHub</a>, or email me at <a href="mailto:ilansiva30@gmail.com" style="color:#b21f1f;">ilansiva30@gmail.com</a>.</p>
+            </section>
+        </div>
+
         <footer>
-            <p>© 2024 - Hosted on GitHub Pages 🚀</p>
+            <p>© 2026 Ilanthiraiyan Sivagnanamoorthy | Built with ❤️ on GitHub Pages | Aerospace Engineer | Researcher | STEM Advocate</p>
         </footer>
     </div>
-    
-    <script>
-        fetch('https://api.github.com/users/thedukeofeelam/repos')
-            .then(res => res.json())
-            .then(repos => {
-                const html = repos.map(repo => `
-                    <div class="project">
-                        <strong>📦 ${repo.name}</strong><br>
-                        ${repo.description || 'No description'}<br>
-                        <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
-                    </div>
-                `).join('');
-                document.getElementById('repos').innerHTML = html || '<p>No public repos yet</p>';
-            });
-    </script>
 </body>
 </html>
