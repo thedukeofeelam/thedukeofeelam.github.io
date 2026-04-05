@@ -1,3 +1,19 @@
+// Create floating particles
+function createParticles() {
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = 10 + Math.random() * 10 + 's';
+        particle.style.width = Math.random() * 6 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        document.body.appendChild(particle);
+    }
+}
+createParticles();
+
 // Mobile menu toggle
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
