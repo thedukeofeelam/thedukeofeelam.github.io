@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Duke of Feelam | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        h1 { color: #ffd700; }
+        .project {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        .btn {
+            background: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👑 The Duke of Feelam</h1>
+        <p>Developer | Creator | Tech Enthusiast</p>
+        
+        <h2>📁 My GitHub Projects</h2>
+        <div id="repos"></div>
+        
+        <h2>📫 Connect With Me</h2>
+        <p>GitHub: <a href="https://github.com/thedukeofeelam" target="_blank">@thedukeofeelam</a></p>
+        
+        <footer>
+            <p>© 2024 - Hosted on GitHub Pages 🚀</p>
+        </footer>
+    </div>
+    
+    <script>
+        fetch('https://api.github.com/users/thedukeofeelam/repos')
+            .then(res => res.json())
+            .then(repos => {
+                const html = repos.map(repo => `
+                    <div class="project">
+                        <strong>📦 ${repo.name}</strong><br>
+                        ${repo.description || 'No description'}<br>
+                        <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+                    </div>
+                `).join('');
+                document.getElementById('repos').innerHTML = html || '<p>No public repos yet</p>';
+            });
+    </script>
+</body>
+</html>
