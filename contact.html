@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ilanthiraiyan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Ilanthiraiyan <span>S.</span></div>
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="publications.html">Research</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Dark/Light</button>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="hero" style="padding: 2rem;">
+                <h1>📫 Let's Connect</h1>
+                <p>I'm always open to discussing research collaborations, engineering opportunities, or STEM education initiatives.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info">
+                        <a href="mailto:ilansiva30@gmail.com" class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                ilansiva30@gmail.com
+                            </div>
+                        </a>
+                        <a href="tel:07492700454" class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                07492 700454
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ilanthiraiyan-sivagnanamoorthy/" target="_blank" class="contact-item">
+                            <div class="contact-icon">🔗</div>
+                            <div>
+                                <strong>LinkedIn</strong><br>
+                                Connect with me
+                            </div>
+                        </a>
+                        <a href="https://github.com/thedukeofeelam" target="_blank" class="contact-item">
+                            <div class="contact-icon">🐙</div>
+                            <div>
+                                <strong>GitHub</strong><br>
+                                Check my code
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Location</strong><br>
+                                Harrow, HA7 4TT, United Kingdom
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h2>Send a Message</h2>
+                        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="text" name="subject" placeholder="Subject">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message ✨</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Ilanthiraiyan Sivagnanamoorthy | Built with ❤️ on GitHub Pages</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
